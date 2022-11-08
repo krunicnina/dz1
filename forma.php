@@ -1,3 +1,20 @@
+<?php require "dbBroker.php"; 
+require "model/user.php"; 
+session_start(); 
+if (isset($_POST['email']) && isset($_POST['password'])) { 
+    $email = $_POST['email']; 
+    $upass = $_POST['password']; 
+    $user_id = 1; 
+    $korisnik = new User($user_id, $email, $upass); 
+    $odg = User::logIn($korisnik, $conn); 
+    if ($odg->num_rows == 1) { 
+    $_SESSION['user_id'] = $korisnik->id; header('Location: index.php'); 
+    echo '<script>alert("Uspešno ste se povezali!")</script>';
+    exit(); 
+} 
+    else { echo '<script>alert("Neuspešno povezivanje!")</script>'; } 
+} 
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
