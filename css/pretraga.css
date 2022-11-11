@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+     justify-content: center;
+    align-items: center; 
+    /* background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);  */
+      background-image: url(../slike/salon1.jpg);   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+   
+ #result{
+    background-color: #ffffff;
+ }  
+ .container h2{
+    color:#ffffff;
+ }
+.container {
+    background-color: #000000cc;
+    width: 100%;
+    min-height: 100vh;
+    /* display: flex;*/
+    justify-content: center;
+    align-items: center; 
+    padding: 100px;
+}
+
+
+ @media screen and (max-width: 768px) {
+    section {
+        padding: 50px;
+    }
+} 
