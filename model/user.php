@@ -19,7 +19,22 @@ class User
       
         return $conn->query($query);
     }
-
+    public function ubaciUser($data,$db){
+		
+		if($data['email'] === '' || $data['password'] === '' ){
+            echo '<script>alert("Polja ne smeju biti prazna!")</script>';
+		
+		}else{
+		
+			$save=$db->query("INSERT INTO user(email,password) VALUES ('".$data['email']."','".$data['password']."')") or die($db->error);
+			if($save){
+				
+                echo '<script>alert("Uspešno ste se registrovali!")</script>';
+			}else{
+                echo '<script>alert("Greška prilikom registrovanja! Molimo Vas, pokušajte ponovo!")</script>';
+			}
+		}
+	}
 }
 
 ?>

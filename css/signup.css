@@ -1,0 +1,101 @@
+.container{
+    background-color: #a6a6a6;
+    display:flex;
+    justify-content: center;
+    height: 700px;
+    align-items: center;
+  
+  }
+  .login-form{
+    background-color: rgb(255, 255, 255, 0.7);
+    padding: 7px;
+    width:500px;
+  
+  }
+  label{
+    flex-basis: 130px;
+    margin-top: 10px;
+    font-size: 20px;
+  
+  }
+  .signup{
+  margin: 30px 0;
+  text-align:center;
+   color: #666666;
+  font-size: 20px;
+  
+  }
+  p{
+    font-size: 20px;
+  }
+  .login-form h1{
+    margin-top:5px;
+    color: rgb(185, 26, 114);
+  }
+  .flex-input{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  
+  }
+  
+  input[type="text"],
+  [type="password"]{
+    padding:8px;
+    font-size: 18px;
+  }
+  
+  #submit{
+    width:100%;
+    font-size: 20px;
+    padding: 9px;
+    background-color: rgb(185, 26, 114);
+    color:white;
+    border:none;
+    margin:20px 0;
+    margin-bottom: 10px;
+    
+  }
+  
+  #reset:hover{
+    cursor:pointer;
+    background-color:  rgb(253, 167, 214);
+  }
+  #reset{
+    width:100%;
+    font-size:20px;
+    padding: 7px;
+    border:none;
+    color:white;
+    background-color: 	rgb(185, 26, 114);
+    margin-bottom: 10px;
+  }
+  
+  input[type="button"]:hover{
+  
+    cursor:pointer;
+    background-color: #b3cce6;
+  }
+  .flex-container{
+    display:flex;
+  
+  }
+  .flex-container div{
+    flex:1;
+  }
+  .flex-container a{
+    text-decoration: none;
+    color:blueviolet;
+  }
+  .flex-container a:hover{
+    text-decoration: underline;
+  }
+  
+  @media all and (max-width:480px){
+    .flex-input{
+        flex-direction: column;
+    }
+    label{
+        flex-basis:0;
+    }
+  }
