@@ -9,20 +9,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo"><img src="slike/pp.png"></label>
-        <ul>
-            <li><a class="active" href="index.php">Početna</a></li>
-            <li><a href="#">Zakazivanje termina</a></li>
-            <li><a href="tretmani.php">Estetski tretmani</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
-            <li><a href="registrujse.php">Registruj se</a></li>
-        </ul>
-    </nav>
+<?php  include'meni.php';?>
     
 
 <div class="baner">
@@ -49,6 +36,7 @@
         <p>U periodu od 31.12.2022. do 15.1.2023. salon neće raditi <br> zbog praznika.</p> 
       </div>
     </div>
+    <?php include 'footer.php';?>
   </div>
     <!-- <script src="js/script.js"></script> -->
 </body>
