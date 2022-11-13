@@ -21,7 +21,18 @@ class Termin {
   
 	}
 
-
+	public static function vratiSve($db,$uslov){
+		$query="SELECT * FROM termin t JOIN user u  ON t.userid=u.userid".$uslov;
+		$query=trim($query);
+        $result=$db->query($query) or die($db->error);
+        $array=[];
+        while($r = $result->fetch_assoc()){
+			$user=new User($r['userid'],$r['email'],$r['password']);
+			$termin=new Termin($r['terminid'],$r['ime'],$r['prezime'],$r['usluga'],$r['datum'],$r['brojtelefona'],$user);
+            array_push($array,$termin);
+            }
+        return $array;
+    }
 
 }
 
