@@ -35,6 +35,21 @@ class User
 			}
 		}
 	}
+
+
+
+
+public static function vratiSve($db){
+    $query="SELECT * FROM user";
+    $result=$db->query($query);
+    $array=[];
+    while($r = $result->fetch_assoc()){
+        $user=new User($r['userid'],$r['email'],$r['password']);
+        array_push($array,$user);
+        }
+    return $array;
+}
+    
 }
 
 ?>

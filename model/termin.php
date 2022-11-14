@@ -34,6 +34,22 @@ class Termin {
         return $array;
     }
 
+    public function ubaciTermin($data,$db){
+		
+		if($data['ime'] === '' || $data['prezime'] === '' || $data['usluga'] === ''|| $data['datum'] === ''|| $data['brojtelefona'] === ''){
+            echo '<script>alert("Nisu popunjena sva polja!")</script>';
+		
+		}else{
+		
+			$save=$db->query("INSERT INTO termin(ime,prezime,usluga,datum,brojtelefona,userid) VALUES ('".$data['ime']."','".$data['prezime']."','".$data['usluga']."','".$data['datum']."','".$data['brojtelefona']."','".$data['userid']."')") or die($db->error);
+			if($save){
+                echo '<script>alert("Termin je uspešno zakazan!")</script>';
+			}else{
+				echo '<script>alert("Greška prilikom zakazivanja termina!")</script>';
+			}
+		}
+	}
+
 }
 
 
