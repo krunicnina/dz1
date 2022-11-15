@@ -64,6 +64,9 @@ include "model/user.php";
                 </tbody>
             </table>
             </div>
+            <a class="btn-round-custom" href="pretraga.php" role="button">Pretraži termine</a>
+            <a class="btn-round-custom" href="index.php" role="button">Nazad na početnu</a>
+            </div>
             </section>
             <div id="myModal" class="modal fade"  role="dialog" >
   <div class="modal-dialog">
@@ -72,7 +75,7 @@ include "model/user.php";
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Izmeni termin</h4>
+        <h4 class="modal-title">Izmeni termin</h4> 
       </div>
       <div class="modal-body">
        <div class="form"-group>
@@ -97,7 +100,7 @@ include "model/user.php";
 </div>
 <div class="form"-group>
 <label> Email</label>
-<input type="text"  id="email" class="form-control" >
+<input type="text"  id="email" class="form-control" readonly >
 </div>
 <input type="hidden" id="tid" class="form-control">
 </div>

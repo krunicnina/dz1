@@ -50,12 +50,15 @@ section {
   transition: all .3s;
 }
 div.modal-content {
-  background-image: url("../slike/modal.jpg");
+  background-image: url("../slike/salon1.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed; 
 }
-
+div.modal-content h4{
+  color: dark grey;
+  font-weight: bold;
+}
 
  @media screen and (max-width: 768px) {
     section {
