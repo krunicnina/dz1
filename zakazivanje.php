@@ -41,6 +41,8 @@ include "model/user.php";
                         <th  scope="col">Datum</th>
                         <th  scope="col">Broj Telefona</th>
                         <th  scope="col">Email</th>
+                        <th  scope="col">Izmeni termin</th> 
+                   
                     </tr>
                   </thead>
                     <tbody>
@@ -55,8 +57,7 @@ include "model/user.php";
                                     <td data-target="datum"><?php echo $row['datum'];?></td>
                                     <td data-target="brojtelefona"><?php echo $row['brojtelefona'];?></td>
                                     <td data-target="email"><?php echo $row['email'];?></td>
-                                 
-                                       
+                                    <td><a href="#" style="color:black" data-role="update" data-id="<?php echo $row['terminid'] ?>" >Izmeni termin</a></td>                 
                                     </tr>
                         <?php }
                           ?> 
@@ -64,5 +65,107 @@ include "model/user.php";
             </table>
             </div>
             </section>
+            <div id="myModal" class="modal fade"  role="dialog" >
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Izmeni termin</h4>
+      </div>
+      <div class="modal-body">
+       <div class="form"-group>
+<label> Ime</label>
+<input type="text" id="ime" class="form-control">
+</div>
+<div class="form"-group>
+<label> Prezime</label>
+<input type="text" id="prezime" class="form-control">
+</div>
+<div class="form"-group>
+<label> Usluga</label>
+<input type="text" id="usluga" class="form-control">
+</div>
+<div class="form"-group>
+<label> Datum</label>
+<input type="text" id="datum" class="form-control">
+</div>
+<div class="form"-group>
+<label> Broj telefona</label>
+<input type="text" id="brojtelefona" class="form-control">
+</div>
+<div class="form"-group>
+<label> Email</label>
+<input type="text"  id="email" class="form-control" >
+</div>
+<input type="hidden" id="tid" class="form-control">
+</div>
+       
+     
+      <div class="modal-footer">
+        <a href="#" id="save" class="btn btn-primary pull-left">Izmeni </a>
+        <button type="button" class="btn btn-default pull-right"style="background-color: red; color:black;" data-dismiss="modal">Obriši</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  </body>
+<script> $(document).ready(function(){
+        $(document).on('click','a[data-role=update]',function(){
+            var id=$(this).data('id');
+            var ime= $('#'+id).children('td[data-target=ime]').text();
+            var prezime= $('#'+id).children('td[data-target=prezime]').text();
+            var usluga= $('#'+id).children('td[data-target=usluga]').text();
+            var datum= $('#'+id).children('td[data-target=datum]').text();
+            var brojtelefona= $('#'+id).children('td[data-target=brojtelefona]').text();
+            var email= $('#'+id).children('td[data-target=email]').text();
+            $("#ime").val(ime);
+            $("#prezime").val(prezime);
+            $("#usluga").val(usluga);
+            $("#datum").val(datum);
+            $("#brojtelefona").val(brojtelefona);
+            $("#email").val(email);
+           $("#tid").val(id);
+               $("#myModal").modal("toggle");
+
+        
+
+        });
+        $('#save').click(function(){
+var id= $('#tid').val();
+var ime= $("#ime").val();
+var prezime= $("#prezime").val();
+var usluga= $("#usluga").val();
+var datum= $("#datum").val();
+var brojtelefona= $("#brojtelefona").val();
+
+$.ajax({
+url:"update.php",
+method: "post",
+data:{ ime:ime, prezime:prezime, usluga:usluga, datum:datum, brojtelefona:brojtelefona, id:id},
+success:function(response){
+   $('#'+id).children('td[data-target=ime]').text(ime);
+   $('#'+id).children('td[data-target=prezime]').text(prezime);
+   $('#'+id).children('td[data-target=usluga]').text(usluga);
+ $('#'+id).children('td[data-target=datum]').text(datum);
+ $('#'+id).children('td[data-target=brojtelefona]').text(brojtelefona);
+   $('#myModal').modal('toggle');
+}
+});
+  }) ;
+    });
+
+    </script>
+   </html>
+
+
+
+
+
+
+
+
+
                     </body>
             </html>
