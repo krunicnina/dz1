@@ -42,7 +42,7 @@ include "model/user.php";
                         <th  scope="col">Broj Telefona</th>
                         <th  scope="col">Email</th>
                         <th  scope="col">Izmeni termin</th> 
-                   
+                        <th >Obriši termin</th> 
                     </tr>
                   </thead>
                     <tbody>
@@ -57,13 +57,16 @@ include "model/user.php";
                                     <td data-target="datum"><?php echo $row['datum'];?></td>
                                     <td data-target="brojtelefona"><?php echo $row['brojtelefona'];?></td>
                                     <td data-target="email"><?php echo $row['email'];?></td>
-                                    <td><a href="#" style="color:black" data-role="update" data-id="<?php echo $row['terminid'] ?>" >Izmeni termin</a></td>                 
+                                    <td><a href="#" style="color:black" data-role="update" data-id="<?php echo $row['terminid'] ?>" >Izmeni termin</a></td>  
+                                    <td><a style="color:black" href="obrisitermin.php?brisanjeid=<?php echo $row['terminid']; ?>" >
+                                           Obriši </td>
+                                        </a>               
                                     </tr>
                         <?php }
                           ?> 
                 </tbody>
             </table>
-            </div>
+           
             <a class="btn-round-custom" href="pretraga.php" role="button">Pretraži termine</a>
             <a class="btn-round-custom" href="index.php" role="button">Nazad na početnu</a>
             </div>
