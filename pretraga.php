@@ -33,13 +33,15 @@ class="btn btn-lg btn-block" -->
 			</div>
 			<br />
 			<div id="result"></div>
+			<br /> 
+			<br />
+			<a class="btn-round-custom" href="index.php" role="button">Nazad na početnu</a>
 		</div>
 		<div style="clear:both"></div>
 		<br />
+
+		<br />
 		
-		<br />
-		<br />
-		<br />
         </body>
 
 </html>

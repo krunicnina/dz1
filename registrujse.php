@@ -6,9 +6,15 @@ include "model/user.php";
 
 
 if(isset( $_POST['submit'] )){
-	
 	$email=trim($_POST['email']);
 	$password=trim($_POST['password']);
+  $upit = "SELECT * FROM user WHERE email='$email'";
+  $res_e = mysqli_query($conn, $upit);
+  if(mysqli_num_rows($res_e) > 0){
+    echo '<script>alert("Email već postoji!")</script>'; }
+    else{
+
+    
 	$data = Array (
 				"email" => $email, 
 				"password" => $password,
@@ -20,7 +26,7 @@ if(isset( $_POST['submit'] )){
         header("Location:forma.php");
         
 }
-
+}
 ?>
 
 
